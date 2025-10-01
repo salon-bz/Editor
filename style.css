@@ -1,0 +1,133 @@
+:root {
+  --bg:#111;
+  --card:#1a1a1a;
+  --header:#222;
+  --btn:#ff5555;
+  --btn-hover:#ff7777;
+  --accent:#00c2ff;
+  --text:#eee;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:sans-serif}
+body{
+  background:linear-gradient(135deg,#111,#222);
+  color:var(--text);
+  height:100vh;
+  overflow:hidden;
+}
+.app{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:100vh;
+  background:var(--card);
+}
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:6px 12px;
+  background:var(--header);
+  position:relative;
+}
+.window-btns{
+  display:flex;
+  gap:6px;
+  margin-right:10px;
+}
+.window-btns span{
+  width:12px;height:12px;border-radius:50%;display:inline-block;
+}
+.red{background:#ff5f56;}
+.yellow{background:#ffbd2e;}
+.green{background:#27c93f;}
+header h1{
+  font-size:14px;
+  font-weight:600;
+  color:var(--text);
+}
+/* Botón 3 punticos */
+.menu-btn{
+  cursor:pointer;
+  font-size:20px;
+  padding:6px 10px;
+  border-radius:6px;
+  user-select:none;
+}
+.menu-btn:hover{background:#333;}
+/* Menú desplegable */
+.menu{
+  position:absolute;
+  right:10px;
+  top:40px;
+  background:#222;
+  border:1px solid #333;
+  border-radius:8px;
+  display:none;
+  flex-direction:column;
+  min-width:140px;
+  z-index:999;
+}
+.menu button{
+  background:none;
+  border:none;
+  padding:10px;
+  text-align:left;
+  color:var(--text);
+  font-size:13px;
+  cursor:pointer;
+}
+.menu button:hover{background:#333;}
+.preview-wrap{
+  height:40%;
+  border-bottom:1px solid #333;
+  display:flex;
+  flex-direction:column;
+}
+#preview{
+  flex:1;
+  background:#fff;
+  width:100%;
+  border:none;
+}
+.editor-area{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.tabs{
+  display:flex;
+  background:#111;
+}
+.tabs button{
+  flex:1;
+  background:#111;
+  border:none;
+  color:#aaa;
+  padding:8px;
+  cursor:pointer;
+  font-size:13px;
+}
+.tabs button.active{background:var(--card);color:var(--accent);}
+.editor{
+  flex:1;
+  display:none;
+}
+.editor.active{display:block;}
+footer{
+  background:#111;
+  padding:4px;
+  text-align:center;
+  font-size:11px;
+  color:#666;
+}
+@media(min-width:900px){
+  body{display:flex;justify-content:center;align-items:center;}
+  .app{
+    max-width:920px;
+    max-height:90vh;
+    border-radius:12px;
+    overflow:hidden;
+  }
+}
+.ace_editor {font-family: monospace !important;line-height: 20px !important;}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Learning Axis — Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="window-btns">
+        <span class="red"></span>
+        <span class="yellow"></span>
+        <span class="green"></span>
+      </div>
+      <h1>Learning Axis — Editor</h1>
+      <div class="menu-btn" onclick="toggleMenu()">⋮</div>
+      <div class="menu" id="menu">
+        <button onclick="runCode()">▶ Run</button>
+        <button onclick="openPreview()">🪟 Abrir</button>
+        <button onclick="expandPreview()">⤢ Expandir</button>
+        <button onclick="downloadZip()">⬇ Descargar ZIP</button>
+      </div>
+    </header>
+    <div class="preview-wrap">
+      <iframe id="preview"></iframe>
+    </div>
+    <div class="editor-area">
+      <div class="tabs">
+        <button class="active" onclick="showTab('html')">HTML</button>
+        <button onclick="showTab('css')">CSS</button>
+        <button onclick="showTab('js')">JavaScript</button>
+      </div>
+      <div id="html" class="editor active"></div>
+      <div id="css" class="editor"></div>
+      <div id="js" class="editor"></div>
+    </div>
+    <footer>Edita en las pestañas y presiona Run o Ctrl+Enter</footer>
+  </div>
+
+  <!-- ACE Editor -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/ace.js"></script>
+  <!-- JSZip para generar ZIP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
